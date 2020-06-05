@@ -112,3 +112,34 @@ Now we generated xml file for each image.
 (tensorflow1) C:\tensorflow1\models\research\object_detection> python xml_to_csv.py
 ```
 Make sure you are in object detection folder.
+This creates a train_labels.csv and test_labels.csv file in the \object_detection\images folder.
+In generate tfrecord.py file make the changes according to your label
+```bash
+def class_text_to_int(row_label):
+    if row_label == 'hand':
+        return 1
+    else:
+        None
+```
+In my case I am only predicting hand
+
+```bash
+python generate_tfrecord.py --csv_input=images\train_labels.csv --image_dir=images\train --output_path=train.record
+python generate_tfrecord.py --csv_input=images\test_labels.csv --image_dir=images\test --output_path=test.record
+```
+These generate a train.record and a test.record file in \object_detection. These will be used to train the new object detection classifier.<br />
+Make changes in the labelmap.pbtxt file which is present in traing folder
+
+```bash
+item {
+  id: 1
+  name: 'hand'
+}
+```
+
+In my case I am predicting only hand
+
+### Train the model
+```bash
+python train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/faster_rcnn_inception_v2_pets.config
+```
