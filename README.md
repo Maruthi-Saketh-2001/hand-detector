@@ -32,6 +32,14 @@ Use the below code to get the value for each class(label)
 training.class_indices
 ```
 
+### To run gesture_detect.py
+1)Open anaconda
+2)Open Spyder
+3)Make sure you are in right path where the code is present
+4)Change the image name to want to test
+5)Now the file
+6)Get the output image with predicted gesture name.
+
 ### To train your own model
 Using the below method we made a model using tensorflow which detect's hand in the given image.
 
@@ -143,3 +151,9 @@ In my case I am predicting only hand
 ```bash
 python train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/faster_rcnn_inception_v2_pets.config
 ```
+
+### After training, get the frozen inference graph
+```bash
+python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/faster_rcnn_inception_v2_pets.config --trained_checkpoint_prefix training/model.ckpt-XXXX --output_directory inference_graph
+```
+#### Make changes in the detection file by making sure the inference graph, image, frazen inference graph and labelmap.pbtxt are in right path.
