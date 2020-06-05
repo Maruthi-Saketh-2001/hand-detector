@@ -1,7 +1,7 @@
 # Hand gesture detector
 
 
-## Running CNN file(gesture.py)
+## Running CNN file
 
 Download and install Anaconda [Anaconda](https://www.anaconda.com/products/individual)
 
@@ -18,9 +18,8 @@ You can directly install packages in Anaconda Packages
 
 Make sure you are in the right directory other wise change the path of training and testing datasets in the code
 
-### Running trainer.py
+### Running pro.py
 
-Get the input image from sample images
 #### Install the required packages
 ```bash
 conda install -c conda-forge keras
@@ -65,7 +64,7 @@ Run the following commands
 5)Now the file
 6)Get the output image with predicted gesture name.
 
-### To train your own model
+## To train your own model
 Using the below method we made a model using tensorflow which detect's hand in the given image.
 
 Download and install Anaconda [Anaconda](https://www.anaconda.com/products/individual)
