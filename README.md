@@ -97,7 +97,18 @@ It will open a jupyter notebook where you run your code and the output will be a
 If this works then setup is ready and we can make our own predictor.
 
 ### Make the training and testing dataset
-Gather some of the images where hands are present
+Gather some of the images where hands are present and seperate 80% of images to training folder and 20% of images to testing folder. These folders are present in the images folder in object detection.
 The more the images the better the output
 Get the labellmg from the "required files" which is in the zip file
 
+After running the labellmg.exe file open the directory containing all the images where hands are present
+Use create box and make a box around the hand
+Label the bax as hand
+Do this both for training and testing images
+Now we generated xml file for each image.
+
+### Convert the xml data to csv file
+```bash
+(tensorflow1) C:\tensorflow1\models\research\object_detection> python xml_to_csv.py
+```
+Make sure you are in object detection folder.
