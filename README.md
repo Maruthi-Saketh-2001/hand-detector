@@ -31,6 +31,12 @@ Use the below code to get the value for each class(label)
 training.class_indices
 ```
 
+### Running gesture_train.py
+The dataset is present in image dataset/training2
+Copy the training and testing folders and paste it in the same folder where code is present
+or 
+change the path in line 67 and 72 to respect directories
+
 ### To run final.py and final1.py
 We need to run final.py which is present in object_detection directory
 We need to install these packages before running the code
