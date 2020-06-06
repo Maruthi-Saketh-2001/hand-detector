@@ -19,7 +19,7 @@ You can directly install packages in Anaconda Packages
 Make sure you are in the right directory other wise change the path of training and testing datasets in the code
 
 ### Running pro.py
-
+goto train_cnn directory
 #### Install the required packages
 ```bash
 conda install -c conda-forge keras
