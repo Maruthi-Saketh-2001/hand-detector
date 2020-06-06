@@ -31,42 +31,22 @@ Use the below code to get the value for each class(label)
 training.class_indices
 ```
 
-### To run final.py
-We need to run final.py which is present in models/research/object_detection/
+### To run final.py and final1.py
+We need to run final.py which is present in object_detection directory
 We need to install these packages before running the code
-Check the models folder in the zip file
-Set the python path
-Change according to your models path where you saved in your system
-```bash
-(tensorflow1) C:\> set PYTHONPATH=C:\tensorflow1\models;C:\tensorflow1\models\research;C:\tensorflow1\models\research\slim
-```
-
-Change the directory to the research directory in models
-```bash
-(tensorflow1) C:\> cd C:\tensorflow1\models\research
-```
-And copy paste it in the conda prompt
-```bash
-protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_detection\protos\argmax_matcher.proto .\object_detection\protos\bipartite_matcher.proto .\object_detection\protos\box_coder.proto .\object_detection\protos\box_predictor.proto .\object_detection\protos\eval.proto .\object_detection\protos\faster_rcnn.proto .\object_detection\protos\faster_rcnn_box_coder.proto .\object_detection\protos\grid_anchor_generator.proto .\object_detection\protos\hyperparams.proto .\object_detection\protos\image_resizer.proto .\object_detection\protos\input_reader.proto .\object_detection\protos\losses.proto .\object_detection\protos\matcher.proto .\object_detection\protos\mean_stddev_box_coder.proto .\object_detection\protos\model.proto .\object_detection\protos\optimizer.proto .\object_detection\protos\pipeline.proto .\object_detection\protos\post_processing.proto .\object_detection\protos\preprocessor.proto .\object_detection\protos\region_similarity_calculator.proto .\object_detection\protos\square_box_coder.proto .\object_detection\protos\ssd.proto .\object_detection\protos\ssd_anchor_generator.proto .\object_detection\protos\string_int_label_map.proto .\object_detection\protos\train.proto .\object_detection\protos\keypoint_box_coder.proto .\object_detection\protos\multiscale_anchor_generator.proto .\object_detection\protos\graph_rewriter.proto .\object_detection\protos\calibration.proto .\object_detection\protos\flexible_grid_anchor_generator.proto
-```
-These are proto files which are used in the code
-
-Run the following commands
-```bash
-(tensorflow1) C:\tensorflow1\models\research> python setup.py build
-(tensorflow1) C:\tensorflow1\models\research> python setup.py install
-```
-
+pip install opencv-python
+Use tensorflow 2.1 version
 1)Open anaconda
 2)Open Spyder
 3)Make sure you are in right path where the code is present
-4)Change the image name you want to test
-5)Now the file
+4)Change the image name you want to test, for final.py use sample_images and for final1.py use sample_images_1
+5)Now run the python file
 6)Get the output image with predicted gesture name.
 
+# This is how we wade custom object detector(hand) using tensoflow
+(Hand gesture is trained with CNN algorithm)
 ## To train your own model
 Using the below method we made a model using tensorflow which detect's hand in the given image.
-
 Download and install Anaconda [Anaconda](https://www.anaconda.com/products/individual)
 Create new environment with python 3.5 or 3.6
 ##### Create Virtual Environment
